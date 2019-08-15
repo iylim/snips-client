@@ -1,3 +1,7 @@
+body {
+  background-color: #fef;
+}
+
 #snippets {
   display: flex;
   justify-content: center;
@@ -17,7 +21,9 @@
 
 .snip .text {
   padding: 1rem;
-  padding-bottom: 0;
+  border: 1px solid  #282c3452;
+  border-bottom: 0;
+  border-radius: 5px 5px 0 0;
 }
 
 
