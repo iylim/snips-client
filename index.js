@@ -8,8 +8,4 @@ renderSnips(SNIPS);
 
 // put that HTML right into #snippets
 const searchForm = document.getElementById('search-bar');
-searchForm.addEventListener('submit', e => {
-  const searchText = e.target['search-text'].value;
-  e.preventDefault();
-  search(searchText);
-});
+searchForm.addEventListener('submit', search);
