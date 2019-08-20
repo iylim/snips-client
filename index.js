@@ -1,11 +1,14 @@
 import SNIPS from './snippet-data.js';
-import { renderSnips, highlightSnips } from './lib/snippets.js';
+import { renderSnips, fetchSnippets } from './lib/snippets.js';
 import search from './lib/search.js';
 
-// map over the SNIPS
-// transform that snip into the HTML
-renderSnips(SNIPS);
+// fetchSnippets().then(snips => renderSnips(snips));
+async function init() {
+  const snippets = await fetchSnippets();
+  renderSnips(snippets);
+}
 
+init();
 // put that HTML right into #snippets
 const searchForm = document.getElementById('search-bar');
 searchForm.addEventListener('submit', search);
